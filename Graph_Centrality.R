@@ -3,9 +3,9 @@ library(viridis)
 
 ####### READ IN DATA #######
 
-edges_dynamic <-  read.csv("Fourregion-PHDynamicEdges.csv")
-nodes_dynamic <- as.data.frame(read.csv("PHDynamicNodes-all.csv"))
-vertex_attributes <- read.csv("PHVertexAttributes-All-total.csv", stringsAsFactors = FALSE)
+edges_dynamic <-  read.csv("Fourregion-PHDynamicEdges-new.csv")
+nodes_dynamic <- as.data.frame(read.csv("PHDynamicsNodes-all-new.csv"))
+vertex_attributes <- read.csv("PHVertexAttributes-All-total-new.csv", stringsAsFactors = FALSE)
 
 ###############################################################################
 
@@ -41,27 +41,6 @@ summary(dynamicCollabs)
 # Check the temporal network
 network.dynamic.check(dynamicCollabs)
 
-##### deactivate multiple edge times for Belize Valley analysis
-
-deactivate.edges(dynamicCollabs, e=1, onset=799, terminus = 800) 
-deactivate.edges(dynamicCollabs, e=1, onset=695, terminus = 736) 
-deactivate.edges(dynamicCollabs, e=5, onset=485, terminus = 486) 
-deactivate.edges(dynamicCollabs, e=5, onset=695, terminus = 736)
-deactivate.edges(dynamicCollabs, e=83, onset=485, terminus = 486) 
-deactivate.edges(dynamicCollabs, e=83, onset=799, terminus = 800)
-
-deactivate.edges(dynamicCollabs, e=9, onset=475, terminus = 849)
-deactivate.edges(dynamicCollabs, e=10, onset=475, terminus = 849)
-deactivate.edges(dynamicCollabs, e=17, onset=475, terminus = 849)
-deactivate.edges(dynamicCollabs, e=22, onset=475, terminus = 849)
-
-deactivate.edges(dynamicCollabs, e=30, onset=598, terminus = 820)
-deactivate.edges(dynamicCollabs, e=33, onset=598, terminus = 820)
-deactivate.edges(dynamicCollabs, e=34, onset=598, terminus = 820)
-deactivate.edges(dynamicCollabs, e=35, onset=598, terminus = 820)
-deactivate.edges(dynamicCollabs, e=69, onset=598, terminus = 820)
-
-
 ################################################################
 ##### NODE LEVEL METRICS 
 
@@ -75,7 +54,7 @@ plot(myresults, plot.type = "single",xy.labels = TRUE,xy.lines = TRUE,
      lwd=3,
      main="Degree Centrality")
 summary(myresults)
-plot(myresults[,c(8,12,7,2)],plot.type = "multiple",xy.lines = TRUE, yax.flip = TRUE, 
+plot(myresults[,c(48,60,15,8)],plot.type = "multiple",xy.lines = TRUE, yax.flip = TRUE, 
      main="Degree Centrality")
 
 
